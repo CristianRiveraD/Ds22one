@@ -1,0 +1,43 @@
+ #include <iostream>
+ 2  using namespace std;
+ 3  
+ 4  void imprime_linea(int);
+ 5  bool esTriangular(int N);
+ 6  
+ 7  int main()
+ 8  {
+ 9      int suma=0, i=1, n;
+10      cout << "Intro numero: ";    cin >> n;
+11  
+12  if(esTriangular(n))
+13      {
+14          cout << "Es triangular" << endl;
+15          suma=0;
+16          for(int i=1; suma<n; i++)
+17          {
+18              suma+=i;
+19              imprime_linea(i);
+20          }
+21      }
+22      else
+23          cout << "No es triangular" << endl;
+24  }
+25  
+26  void imprime_linea(int i)
+27  {
+28      for(int j=0; j<i; j++)
+29          cout << "*";
+30  
+31      cout << endl;
+32  }
+33  
+34  bool esTriangular(int N)
+35  {
+36      int suma=0;
+37      for(int i=1; suma<N; i++)
+38          suma+=i;
+39      if (suma==N)
+40          return true;
+41      else
+42          return false;
+43  }
